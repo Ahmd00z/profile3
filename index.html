@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ahmed Maged — Machine Learning Developer</title>
+  <meta name="description" content="Portfolio of Ahmed Maged, a Machine Learning Developer specializing in MLOps, model optimization, and data-driven products." />
+  <meta name="theme-color" content="#0ea5e9" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ahmed Maged — Machine Learning Developer">
+  <meta property="og:description" content="Modeling, MLOps, and data products.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="">
+
+  <!-- Favicon (optional inline SVG) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%230ea5e9'/%3E%3Ctext x='50' y='58' font-size='48' text-anchor='middle' fill='white' font-family='Arial, Helvetica, sans-serif'%3EAM%3C/text%3E%3C/svg%3E">
+
+  <style>
+    :root {
+      --bg: #0b1020;
+      --card: #11162a;
+      --muted: #9aa7b2;
+      --text: #e6eef5;
+      --brand: #0ea5e9;
+      --accent: #22d3ee;
+      --ring: #1d2440;
+      --ok: #10b981;
+      --warn: #f59e0b;
+      --danger: #ef4444;
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.03);
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+    * { box-sizing: border-box }
+    html, body { height: 100% }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      color: var(--text);
+      background: radial-gradient(1000px 600px at 10% -10%, rgba(34, 211, 238, .15), transparent 60%),
+                  radial-gradient(800px 600px at 110% 10%, rgba(14, 165, 233, .12), transparent 60%),
+                  var(--bg);
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none }
+    a:hover { text-decoration: underline }
+    img { max-width: 100%; height: auto; border-radius: calc(var(--radius) - 6px) }
+
+    /* Layout */
+    .container { width: min(1100px, 92%); margin: 0 auto; }
+    header.nav {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(8px);
+      background: rgba(11,16,32,.75);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 0;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: .3px }
+    .brand .dot { width: 10px; height: 10px; border-radius: 999px; background: var(--brand); box-shadow: 0 0 0 6px rgba(14,165,233,.15) }
+    .nav a { opacity: .9 }
+    .nav-links { display: flex; gap: 18px; align-items: center }
+    .btn {
+      --p: 12px; --px: 16px;
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: var(--p) calc(var(--px) + 2px);
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.08);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      box-shadow: var(--shadow);
+      color: var(--text); font-weight: 600; letter-spacing: .2px;
+      transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
+      white-space: nowrap;
+    }
+    .btn:hover { transform: translateY(-1px) }
+    .btn.primary { background: linear-gradient(180deg, rgba(34,211,238,.18), rgba(14,165,233,.18)); border-color: rgba(34,211,238,.35) }
+    .btn.ghost { background: transparent }
+    .chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 10px; border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      font-size: 12px; color: var(--muted);
+    }
+    .grid { display: grid; gap: 22px }
+    .grid.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+    .grid.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)) }
+    @media (max-width: 900px) { .grid.cols-3 { grid-template-columns: 1fr 1fr } }
+    @media (max-width: 740px) { .grid.cols-2, .grid.cols-3 { grid-template-columns: 1fr } }
+
+    /* Hero */
+    .hero { padding: 58px 0 30px }
+    .hero-wrap {
+      display: grid; grid-template-columns: 1.3fr .7fr; gap: 28px; align-items: center;
+    }
+    @media (max-width: 900px) { .hero-wrap { grid-template-columns: 1fr } }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero .card { padding: 28px }
+    .title {
+      font-size: clamp(28px, 3.2vw, 44px);
+      line-height: 1.15; margin: 6px 0 12px; font-weight: 800;
+    }
+    .subtitle { color: var(--muted); font-size: clamp(14px, 1.8vw, 18px); }
+    .kpis { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 14px }
+    .kpi {
+      padding: 10px 14px; border-radius: 14px; background: rgba(34,211,238,.07);
+      border: 1px dashed rgba(34,211,238,.35); font-weight: 700;
+    }
+
+    /* Sections */
+    section { padding: 36px 0 }
+    section h2 {
+      margin: 0 0 14px; font-size: clamp(20px, 2.6vw, 28px);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .section-lead { color: var(--muted); margin-bottom: 18px }
+
+    /* Cards */
+    .proj, .skill, .exp, .pub, .contact {
+      padding: 18px; border-radius: var(--radius); border: 1px solid rgba(255,255,255,.08);
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      box-shadow: var(--shadow);
+    }
+    .proj h3 { margin: 8px 0 }
+    .meta { color: var(--muted); font-size: 14px }
+    .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px }
+    .tags .chip { font-size: 11px }
+
+    /* Footer */
+    footer { padding: 36px 0 50px; color: var(--muted); text-align: center; }
+    .divider { height: 1px; background: rgba(255,255,255,.08); margin: 24px 0 }
+
+    /* Animations */
+    .fade-up { opacity: 0; transform: translateY(8px); animation: fadeUp .7s ease forwards; }
+    .delay-1 { animation-delay: .06s } .delay-2 { animation-delay: .12s } .delay-3 { animation-delay: .18s }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0) } }
+
+    /* Accessibility helpers */
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0 }
+  </style>
+</head>
+<body>
+  <header class="nav" aria-label="Main">
+    <div class="container nav-inner">
+      <div class="brand">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Ahmed&nbsp;Maged</span>
+        <span class="chip" title="Open to work">Open to Work</span>
+      </div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+        <a class="btn ghost" href="#resume" id="resumeBtn">Resume</a>
+        <a class="btn primary" href="mailto:ahmedmaged2004zsc@gmail.com">Hire me</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-wrap">
+        <div class="card fade-up">
+          <p class="chip">Machine Learning Developer · MLOps · Applied AI</p>
+          <h1 class="title">I build reliable ML systems that ship to production.</h1>
+          <p class="subtitle">From scoping a dataset to training, evaluation, and deploying models with monitoring. I focus on measurable impact, clean code, and fast iterations.</p>
+          <div class="kpis">
+            <span class="kpi" title="Reduced model latency by 45% on edge device">-45% latency</span>
+            <span class="kpi" title="Improved AUC on fraud model">+3.2% AUC</span>
+            <span class="kpi" title="Cut cloud costs">-28% cost</span>
+          </div>
+          <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap">
+            <a class="btn primary" href="#projects" aria-label="View featured projects">See Projects</a>
+            <a class="btn" href="https://www.linkedin.com/in/ahmed-maged-swe" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+        <div class="card fade-up delay-2" aria-label="Profile card">
+          <img alt="Profile/cover image placeholder" src="https://images.unsplash.com/photo-1551281044-8c5f0c3f31ab?q=80&w=1200&auto=format&fit=crop" />
+          <div style="display:flex; gap:10px; margin-top:12px; flex-wrap:wrap">
+            <span class="chip"><span aria-hidden="true">📍</span> Cairo, Egypt</span>
+            <span class="chip"><span aria-hidden="true">💬</span> English · Arabic</span>
+            <span class="chip"><span aria-hidden="true">✅</span> Available freelance</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Projects -->
+    <section id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <h2 id="projects-title">Featured Projects</h2>
+        <p class="section-lead">A few end-to-end projects that highlight practical ML and MLOps.</p>
+        <div class="grid cols-3">
+          <article class="proj fade-up">
+            <h3>SmartDemand — Time Series Forecasting</h3>
+            <p class="meta">Python, Prophet, TorchTS, FastAPI, Docker</p>
+            <p>Built a multi-tenant forecasting service with hierarchical models and automatic holiday effects. Shipped REST API with cached predictions and confidence intervals.</p>
+            <div class="tags">
+              <span class="chip">CI/CD</span><span class="chip">Monitoring</span><span class="chip">Docker</span><span class="chip">FastAPI</span>
+            </div>
+          </article>
+
+          <article class="proj fade-up delay-1">
+            <h3>VisionLite — Edge Object Detection</h3>
+            <p class="meta">PyTorch, ONNX, TensorRT, Jetson</p>
+            <p>Optimized a YOLO-based detector for edge deployment. Quantized to INT8, achieving 45% lower latency with <code>&lt;2%</code> mAP drop.</p>
+            <div class="tags">
+              <span class="chip">Quantization</span><span class="chip">Pruning</span><span class="chip">Edge AI</span><span class="chip">Triton</span>
+            </div>
+          </article>
+
+          <article class="proj fade-up delay-2">
+            <h3>FraudShield — Tabular ML @ Scale</h3>
+            <p class="meta">LightGBM, XGBoost, Optuna, MLflow</p>
+            <p>Designed robust feature pipelines and trained gradient boosting ensembles with careful CV. Improved AUC by 3.2% and reduced drift with adaptive thresholds.</p>
+            <div class="tags">
+              <span class="chip">Feature Store</span><span class="chip">Explainability</span><span class="chip">MLflow</span><span class="chip">Optuna</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <h2 id="skills-title">Skills & Tooling</h2>
+        <div class="grid cols-3">
+          <div class="skill">
+            <h3>Modeling</h3>
+            <p>Supervised/unsupervised learning, time-series, NLP basics, computer vision, recommendation, and evaluation/validation best practices.</p>
+            <div class="tags">
+              <span class="chip">PyTorch</span><span class="chip">TensorFlow</span><span class="chip">scikit-learn</span><span class="chip">LightGBM</span>
+            </div>
+          </div>
+          <div class="skill">
+            <h3>MLOps</h3>
+            <p>Experiment tracking, reproducibility, packaging, CI/CD, model serving, orchestration, and observability.</p>
+            <div class="tags">
+              <span class="chip">MLflow</span><span class="chip">Weights & Biases</span><span class="chip">Docker</span><span class="chip">Kubernetes</span><span class="chip">Airflow</span>
+            </div>
+          </div>
+          <div class="skill">
+            <h3>Data & Backend</h3>
+            <p>Feature pipelines, APIs, and data engineering for production ML.</p>
+            <div class="tags">
+              <span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">PostgreSQL</span><span class="chip">Pandas</span><span class="chip">Spark</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" aria-labelledby="experience-title">
+      <div class="container">
+        <h2 id="experience-title">Experience</h2>
+        <div class="grid cols-2">
+          <div class="exp">
+            <h3>Machine Learning Developer — Freelance</h3>
+            <p class="meta">2023 — Present · Remote</p>
+            <ul>
+              <li>Deliver end-to-end ML features: data scoping, training, evaluation, deployment, and monitoring.</li>
+              <li>Improve latency and cost with model compression, batching, and caching strategies.</li>
+              <li>Collaborate closely with product and engineering to align metrics with business impact.</li>
+            </ul>
+          </div>
+          <div class="exp">
+            <h3>AI Intern — Various Projects</h3>
+            <p class="meta">2022 — 2023</p>
+            <ul>
+              <li>Implemented classic ML pipelines for tabular problems with strong validation strategy.</li>
+              <li>Built small-scale recommendation and classification demos with clean, testable code.</li>
+              <li>Wrote internal docs and notebooks to onboard teammates efficiently.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications" aria-labelledby="pubs-title">
+      <div class="container">
+        <h2 id="pubs-title">Publications & Talks</h2>
+        <div class="grid cols-2">
+          <div class="pub">
+            <h3>Talk: Practical Validation to Avoid Overfitting</h3>
+            <p class="meta">Meetup · Slides & Demo</p>
+            <p>Walked through pitfalls of leakage, target encoding, and temporal CV with hands-on examples.</p>
+          </div>
+          <div class="pub">
+            <h3>Blog: Serving Models the Right Way</h3>
+            <p class="meta">Article · Engineering</p>
+            <p>Compared REST, gRPC, and batch predictions; covered autoscaling and monitoring considerations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title">Contact</h2>
+        <div class="contact">
+          <p>Want to collaborate or hire me?</p>
+          <ul>
+            <li>Email: <a href="mailto:ahmedmaged2004zsc@gmail.com">ahmedmaged2004zsc@gmail.com</a></li>
+            <li>Phone: <a href="tel:01026381342">01026381342</a></li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/ahmed-maged-swe" target="_blank" rel="noopener">linkedin.com/in/ahmed-maged-swe</a></li>
+          </ul>
+          <form onsubmit="submitForm(event)" aria-label="Quick contact form" style="margin-top:12px; display:grid; gap:10px; grid-template-columns: 1fr 1fr;"
+            autocomplete="on">
+            <label class="sr-only" for="name">Name</label>
+            <input id="name" name="name" placeholder="Your name" required style="grid-column: span 1; padding:12px; border-radius: 12px; border:1px solid rgba(255,255,255,.12); background:#0f1528; color:var(--text)">
+            <label class="sr-only" for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="Your email" required style="grid-column: span 1; padding:12px; border-radius: 12px; border:1px solid rgba(255,255,255,.12); background:#0f1528; color:var(--text)">
+            <label class="sr-only" for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell me about your project..." required rows="4" style="grid-column: span 2; padding:12px; border-radius: 12px; border:1px solid rgba(255,255,255,.12); background:#0f1528; color:var(--text)"></textarea>
+            <button class="btn primary" type="submit" style="width:max-content">Send</button>
+            <p id="formStatus" class="meta" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p>© <span id="year"></span> Ahmed Maged. All rights reserved.</p>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Smooth scroll for in-page links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href');
+        if (id.length > 1) {
+          e.preventDefault();
+          document.querySelector(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Year + Resume placeholder
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('resumeBtn').addEventListener('click', (e) => {
+      e.preventDefault();
+      alert('Add your resume.pdf to this folder and link it here!');
+    });
+
+    // Lightweight contact form (client-side only)
+    function submitForm(e) {
+      e.preventDefault();
+      const status = document.getElementById('formStatus');
+      status.textContent = 'Thanks! Your message is prepared in your mail client.';
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      const subject = encodeURIComponent('Portfolio contact from ' + name);
+      const body = encodeURIComponent('From: ' + name + ' (' + email + ')%0D%0A%0D%0A' + message);
+      window.location.href = 'mailto:ahmedmaged2004zsc@gmail.com?subject=' + subject + '&body=' + body;
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
