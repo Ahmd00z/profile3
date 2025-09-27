@@ -13,18 +13,18 @@
   <meta property="og:type" content="website" />
 
   <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='black'/%3E%3Ctext x='50' y='58' font-size='48' text-anchor='middle' fill='gold' font-family='Arial, Helvetica, sans-serif'%3EAM%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="profile.jpg" type="image/jpg">
 
   <style>
     :root {
-      --bg: #000000;
+      --bg: #0b0b0b;
       --card: #1a1a1a;
-      --muted: #aaa;
+      --muted: #9a9a9a;
       --text: #f5f5f5;
       --brand: #FFD700;
-      --accent: #ffcc33;
+      --accent: #FFD700;
       --radius: 18px;
-      --shadow: 0 10px 30px rgba(0,0,0,.5);
+      --shadow: 0 10px 30px rgba(0,0,0,.25);
       --font: ui-sans-serif, system-ui, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", Arial;
     }
 
@@ -47,23 +47,22 @@
     header.nav {
       position: sticky;
       top: 0;
-      background: rgba(0,0,0,.95);
-      border-bottom: 1px solid rgba(255,255,255,.08);
+      background: rgba(11,11,11,.95);
+      border-bottom: 1px solid rgba(255,215,0,.15);
       backdrop-filter: blur(6px);
       z-index: 30;
     }
     .nav-inner { display:flex; justify-content:space-between; align-items:center; padding:14px 0; gap:12px; }
-    .brand { display:flex; gap:10px; align-items:center; font-weight:700; font-size:16px; }
-    .chip { padding:4px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.2); font-size:12px; background: rgba(255,255,255,.05); }
+    .brand { display:flex; gap:10px; align-items:center; font-weight:700; font-size:16px; color: var(--brand); }
+    .chip { padding:4px 10px; border-radius:999px; border:1px solid var(--brand); font-size:12px; background: rgba(255,215,0,.08); color: var(--brand); }
 
     nav.nav-links { display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
-    .btn { padding:10px 16px; border-radius:var(--radius); border:1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.05); font-weight:600; font-size:14px; display:inline-block; }
-    .btn.primary { background: rgba(255,215,0,.15); border-color: rgba(255,215,0,.3); color: var(--text); }
+    .btn { padding:10px 16px; border-radius:var(--radius); border:1px solid var(--brand); background: rgba(255,215,0,.08); font-weight:600; font-size:14px; display:inline-block; color: var(--brand); }
 
     section { padding:50px 0; }
-    h1 { margin:0 0 6px 0; font-size:34px; color: var(--brand); }
+    h1 { margin:0 0 6px 0; font-size:34px; }
     h2 { font-size:26px; margin:0 0 14px 0; color: var(--brand); }
-    h3 { margin:0 0 8px 0; font-size:18px; }
+    h3 { margin:0 0 8px 0; font-size:18px; color: var(--brand); }
     p { margin:0 0 10px 0; line-height:1.5; color: var(--text); }
 
     .grid { display:grid; gap:20px; }
@@ -75,21 +74,17 @@
       nav.nav-links { gap:8px; }
     }
 
-    .card, .skill, .edu, .cert, .contact {
-      padding:20px;
+    .card, .proj, .skill, .edu, .cert, .contact {
+      padding:18px;
       border-radius:var(--radius);
       background: var(--card);
-      border:1px solid rgba(255,255,255,.1);
+      border:1px solid rgba(255,215,0,.15);
       box-shadow: var(--shadow);
     }
 
-    .profile-img {
-      width:100%;
-      max-height:360px;
-      object-fit:cover;
-      border-radius:12px;
-      display:block;
-    }
+    /* Projects grid */
+    .projects-grid { display:grid; gap:18px; grid-template-columns: 1fr; }
+    @media(min-width: 900px) { .projects-grid { grid-template-columns: 1fr 1fr; } }
 
     footer { text-align:center; padding:30px 0; color:var(--muted); font-size:14px; }
   </style>
@@ -104,15 +99,11 @@
       </div>
 
       <nav class="nav-links" role="navigation" aria-label="Main navigation">
+        <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#education">Education</a>
         <a href="#certs">Certifications</a>
         <a href="#contact">Contact</a>
-        <a class="btn primary"
-           href="https://drive.google.com/"
-           target="_blank"
-           rel="noopener noreferrer"
-           aria-label="Open resume in new tab">Resume</a>
       </nav>
     </div>
   </header>
@@ -124,21 +115,52 @@
         <div class="card">
           <h1>Ahmed Maged</h1>
           <h3>AI &amp; ML Engineer</h3>
-          <p>Computer Engineering student with strong foundations in AI, ML, and deep learning. Skilled in computer vision, NLP, and building scalable ML pipelines. Passionate about applying AI to solve real-world problems.</p>
+          <p>Strong foundations in computer engineering with hands-on experience in developing and deploying machine learning models. Skilled in deep learning, computer vision, and NLP. Passionate about applying AI to real-world problems with scalable and efficient solutions.</p>
 
           <p>
             <b>Phone:</b> <a href="tel:+201026381343" aria-label="Phone">+20 1026381343</a><br>
-            <b>Email:</b> <a href="mailto:ahmedmaged@example.com">ahmedmaged@example.com</a><br>
+            <b>Email:</b> <a href="mailto:ahmedmaged@gmail.com">ahmedmaged@gmail.com</a><br>
             <b>LinkedIn:</b>
-            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">linkedin.com/in/ahmedmaged</a>
+            <a href="https://www.linkedin.com/in/ahmed-maged" target="_blank" rel="noopener noreferrer">linkedin.com/in/ahmed-maged</a>
           </p>
         </div>
 
-        <div class="card">
-          <img
-            class="profile-img"
-            src="me.jpg"
-            alt="Ahmed Maged profile photo">
+        <div class="card" aria-hidden="false">
+          <img class="profile-img" src="profile.jpg" alt="Ahmed Maged profile photo">
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+          <div class="proj card">
+            <h3>NYC Taxi Trip Prediction</h3>
+            <p>ML regression models to predict trip duration using distance metrics and temporal features.</p>
+            <a href="https://github.com/Ahmd00z/nyc-taxi" target="_blank">View Project</a>
+          </div>
+          <div class="proj card">
+            <h3>Fraud Detection</h3>
+            <p>Fraudulent transaction detection using anomaly detection and supervised ML models.</p>
+            <a href="https://github.com/Ahmd00z/fraud-detection" target="_blank">View Project</a>
+          </div>
+          <div class="proj card">
+            <h3>SalePrice EDA</h3>
+            <p>Exploratory data analysis and predictive modeling on house prices dataset.</p>
+            <a href="https://github.com/Ahmd00z/Machine-learning-projects" target="_blank">View Project</a>
+          </div>
+          <div class="proj card">
+            <h3>ML Pipelines</h3>
+            <p>End-to-end machine learning workflow including preprocessing and deployment.</p>
+            <a href="https://github.com/Ahmd00z/Machine-learning-projects" target="_blank">View Project</a>
+          </div>
+          <div class="proj card">
+            <h3>AI Experiments</h3>
+            <p>Collection of experiments with AI/ML algorithms and optimization techniques.</p>
+            <a href="https://github.com/Ahmd00z/Machine-learning-projects" target="_blank">View Project</a>
+          </div>
         </div>
       </div>
     </section>
@@ -150,23 +172,23 @@
         <div class="grid cols-3">
           <div class="skill card">
             <h3>Tech Stack</h3>
-            <p>Python, C, C++, Java, SQL, Git/GitHub, Azure</p>
+            <p>Git, GitHub, SQL, Azure, Python, C, C++, Java, PyTorch, Transformers, OpenCV</p>
           </div>
           <div class="skill card">
             <h3>Machine Learning</h3>
-            <p>Regression, Classification, KNN, Random Forest, K-Means, Boosting</p>
+            <p>Regression, Classification, Random Forest, KNN, K-Means, Bagging &amp; Boosting</p>
           </div>
           <div class="skill card">
             <h3>Deep Learning</h3>
-            <p>CNNs, RNNs, Transformers, GNNs</p>
+            <p>CNNs, RNNs, GNNs, GAT, VAE, Transformers</p>
           </div>
           <div class="skill card">
             <h3>Knowledge</h3>
-            <p>OOP, DSA, Databases, Image Processing, Signal Processing</p>
+            <p>Problem solving, OOP, DSA, Databases, Signal Processing, Image Processing</p>
           </div>
           <div class="skill card">
             <h3>Soft Skills</h3>
-            <p>Problem Solving, Critical Thinking, Collaboration</p>
+            <p>Adaptability, Communication, Critical Thinking, Collaboration</p>
           </div>
         </div>
       </div>
@@ -203,9 +225,9 @@
       <div class="container">
         <h2>Contact</h2>
         <div class="contact card">
-          <p>Email: <a href="mailto:ahmedmaged@example.com">ahmedmaged@example.com</a></p>
+          <p>Email: <a href="mailto:ahmedmaged@gmail.com">ahmedmaged@gmail.com</a></p>
           <p>Phone: <a href="tel:+201026381343">+20 1026381343</a></p>
-          <p>LinkedIn: <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">linkedin.com/in/ahmedmaged</a></p>
+          <p>LinkedIn: <a href="https://www.linkedin.com/in/ahmed-maged" target="_blank" rel="noopener noreferrer">linkedin.com/in/ahmed-maged</a></p>
         </div>
       </div>
     </section>
@@ -219,4 +241,3 @@
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
-</html>
