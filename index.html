@@ -1,243 +1,310 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ahmed Maged — AI & ML Engineer</title>
-  <meta name="description" content="Portfolio of Ahmed Maged, an AI & ML Engineer specializing in deep learning, computer vision, and natural language processing." />
-  <meta name="theme-color" content="#FFD700" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Ahmed Maged — AI & ML Engineer" />
-  <meta property="og:description" content="AI, ML, DL, and Generative AI projects." />
-  <meta property="og:type" content="website" />
-
-  <!-- Favicon -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahmed Maged | Portfolio</title>
   <link rel="icon" href="profile.jpg" type="image/jpg">
-
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
-    :root {
-      --bg: #0b0b0b;
-      --card: #1a1a1a;
-      --muted: #9a9a9a;
-      --text: #f5f5f5;
-      --brand: #FFD700;
-      --accent: #FFD700;
-      --radius: 18px;
-      --shadow: 0 10px 30px rgba(0,0,0,.25);
-      --font: ui-sans-serif, system-ui, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", Arial;
-    }
-
-    * { box-sizing: border-box; }
-    html,body { height:100%; }
+    /* Global Styles */
     body {
-      margin:0;
-      font-family: var(--font);
-      color: var(--text);
-      background: var(--bg);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: #0d0d0d;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+    a {
+      color: gold;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
     }
 
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    .container { width: min(1100px, 92%); margin: 0 auto; }
-
-    header.nav {
-      position: sticky;
-      top: 0;
-      background: rgba(11,11,11,.95);
-      border-bottom: 1px solid rgba(255,215,0,.15);
-      backdrop-filter: blur(6px);
-      z-index: 30;
+    /* Navbar */
+    nav {
+      background: #000;
+      padding: 15px 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #222;
     }
-    .nav-inner { display:flex; justify-content:space-between; align-items:center; padding:14px 0; gap:12px; }
-    .brand { display:flex; gap:10px; align-items:center; font-weight:700; font-size:16px; color: var(--brand); }
-    .chip { padding:4px 10px; border-radius:999px; border:1px solid var(--brand); font-size:12px; background: rgba(255,215,0,.08); color: var(--brand); }
-
-    nav.nav-links { display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
-    .btn { padding:10px 16px; border-radius:var(--radius); border:1px solid var(--brand); background: rgba(255,215,0,.08); font-weight:600; font-size:14px; display:inline-block; color: var(--brand); }
-
-    section { padding:50px 0; }
-    h1 { margin:0 0 6px 0; font-size:34px; }
-    h2 { font-size:26px; margin:0 0 14px 0; color: var(--brand); }
-    h3 { margin:0 0 8px 0; font-size:18px; color: var(--brand); }
-    p { margin:0 0 10px 0; line-height:1.5; color: var(--text); }
-
-    .grid { display:grid; gap:20px; }
-    .grid.cols-2 { grid-template-columns: 1fr 1fr; }
-    .grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
-    @media(max-width: 800px) {
-      .grid.cols-2, .grid.cols-3 { grid-template-columns: 1fr; }
-      .nav-inner { flex-direction:column; align-items:flex-start; gap:8px; padding:10px 0; }
-      nav.nav-links { gap:8px; }
+    nav .logo {
+      color: gold;
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      color: gold;
+      font-weight: 500;
     }
 
-    .card, .proj, .skill, .edu, .cert, .contact {
-      padding:18px;
-      border-radius:var(--radius);
-      background: var(--card);
-      border:1px solid rgba(255,215,0,.15);
-      box-shadow: var(--shadow);
+    /* Hero Section */
+    .hero {
+      padding: 70px 10%;
+      background: #0d0d0d;
+    }
+    .hero .grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+    .card {
+      background: #111;
+      padding: 25px;
+      border-radius: 15px;
+      border: 1px solid #222;
+    }
+    .card h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    .card h3 {
+      color: gold;
+      margin-bottom: 15px;
+    }
+    .hero img.profile-img {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 18px;
+      display: block;
+      margin: 0 auto;
     }
 
-    /* Projects grid */
-    .projects-grid { display:grid; gap:18px; grid-template-columns: 1fr; }
-    @media(min-width: 900px) { .projects-grid { grid-template-columns: 1fr 1fr; } }
+    /* Sections */
+    section {
+      padding: 70px 12%;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 25px;
+      color: gold;
+      border-bottom: 2px solid gold;
+      display: inline-block;
+      padding-bottom: 6px;
+    }
+    .skills ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .skills li {
+      margin: 8px 0;
+      padding-left: 20px;
+      position: relative;
+    }
+    .skills li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: gold;
+    }
 
-    footer { text-align:center; padding:30px 0; color:var(--muted); font-size:14px; }
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+    .project-card {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid #333;
+      transition: transform 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      border: 1px solid gold;
+    }
+    .project-card h3 {
+      color: gold;
+      margin-bottom: 10px;
+    }
+
+    /* Footer */
+    footer {
+      background: #111;
+      padding: 40px 10%;
+      border-top: 1px solid #222;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: center;
+    }
+    .footer-left {
+      color: #ccc;
+      font-size: 0.95rem;
+    }
+    .footer-right {
+      text-align: right;
+    }
+    .social-icons a {
+      color: gold;
+      margin-left: 15px;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+    .social-icons a:hover {
+      color: #fff;
+    }
+    .copyright {
+      text-align: center;
+      margin-top: 25px;
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero .grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .footer-right {
+        text-align: center;
+      }
+      .social-icons a {
+        margin: 0 10px;
+      }
+    }
   </style>
 </head>
 <body>
   <!-- Navbar -->
-  <header class="nav" role="banner">
-    <div class="container nav-inner">
-      <div class="brand" aria-label="Brand">
-        <span>Ahmed&nbsp;Maged</span>
-        <span class="chip">AI &amp; ML Engineer</span>
+  <nav>
+    <div class="logo">Ahmed Maged</div>
+    <ul>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="grid">
+      <div class="card">
+        <h1>Ahmed Maged</h1>
+        <h3>AI &amp; ML Engineer</h3>
+        <p>
+          Strong foundations in computer engineering with hands-on experience in developing and deploying machine learning models. Skilled in deep learning, computer vision, and NLP. Passionate about applying AI to real-world problems with scalable and efficient solutions.
+        </p>
+        <p>
+          <b>Phone:</b> <a href="tel:+201026381343">+20 1026381343</a><br>
+          <b>Email:</b> <a href="mailto:ahmedmaged@gmail.com">ahmedmaged@gmail.com</a><br>
+          <b>LinkedIn:</b>
+          <a href="https://www.linkedin.com/in/ahmed-maged" target="_blank">linkedin.com/in/ahmed-maged</a><br>
+          <b>GitHub:</b>
+          <a href="https://github.com/Ahmd00z" target="_blank">github.com/Ahmd00z</a>
+        </p>
       </div>
 
-      <nav class="nav-links" role="navigation" aria-label="Main navigation">
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#education">Education</a>
-        <a href="#certs">Certifications</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <div class="card">
+        <img class="profile-img" src="profile.jpg" alt="Ahmed Maged profile photo">
+      </div>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <!-- Hero -->
-    <section class="hero">
-      <div class="container grid cols-2">
-        <div class="card">
-          <h1>Ahmed Maged</h1>
-          <h3>AI &amp; ML Engineer</h3>
-          <p>Strong foundations in computer engineering with hands-on experience in developing and deploying machine learning models. Skilled in deep learning, computer vision, and NLP. Passionate about applying AI to real-world problems with scalable and efficient solutions.</p>
+  <!-- Education -->
+  <section id="education">
+    <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+    <p><strong>B.Sc. Computer Engineering</strong></p>
+    <p>Faculty of Engineering, Zagazig University (2022 - 2027)</p>
+    <p><em>Relevant Coursework:</em> Machine Learning, Artificial Intelligence, Data Structures & Algorithms, Database Systems, Operating Systems</p>
+  </section>
 
-          <p>
-            <b>Phone:</b> <a href="tel:+201026381343" aria-label="Phone">+20 1026381343</a><br>
-            <b>Email:</b> <a href="mailto:ahmedmaged@gmail.com">ahmedmaged@gmail.com</a><br>
-            <b>LinkedIn:</b>
-            <a href="https://www.linkedin.com/in/ahmed-maged" target="_blank" rel="noopener noreferrer">linkedin.com/in/ahmed-maged</a>
-          </p>
-        </div>
+  <!-- Skills -->
+  <section id="skills" class="skills">
+    <h2><i class="fas fa-lightbulb"></i> Skills</h2>
+    <ul>
+      <li>Problem Solving & Critical Thinking</li>
+      <li>Teamwork & Collaboration</li>
+      <li>Effective Communication</li>
+      <li>Adaptability & Time Management</li>
+      <li>Leadership & Initiative</li>
+    </ul>
+  </section>
 
-        <div class="card" aria-hidden="false">
-          <img class="profile-img" src="profile.jpg" alt="Ahmed Maged profile photo">
+  <!-- Certifications -->
+  <section id="certifications">
+    <h2><i class="fas fa-certificate"></i> Certifications & Training</h2>
+    <p>— Artificial Intelligence (AI) Summer Training at ITI (07.2025 - 08.2025)</p>
+    <p>— Microsoft Machine Learning at DEPI (06.2025 - 01.2025)</p>
+    <p>— Gen AI Summer Training at ITI (08.2025 - 09.2025)</p>
+    <p>— Machine Learning Diploma at CSkilled (06.2025 - 10.2025)</p>
+    <p>— Deep Learning & System Design Diploma at CSkilled (10.2025 - Present)</p>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="projects">
+    <h2><i class="fas fa-code"></i> Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>NYC Taxi Analysis</h3>
+        <p>Exploratory Data Analysis and prediction of taxi fares using ML techniques.</p>
+        <a href="https://github.com/Ahmd00z/nyc-taxi" target="_blank">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>Fraud Detection</h3>
+        <p>Detecting fraudulent transactions using anomaly detection and supervised learning.</p>
+        <a href="https://github.com/Ahmd00z/fraud-detection" target="_blank">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>SalePrice EDA</h3>
+        <p>Data cleaning, visualization, and predictive modeling on house pricing dataset.</p>
+        <a href="https://github.com/Ahmd00z/Machine-learning-projects" target="_blank">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>ML Pipelines</h3>
+        <p>End-to-end machine learning workflow including preprocessing and deployment.</p>
+        <a href="https://github.com/Ahmd00z/Machine-learning-projects" target="_blank">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>AI Experiments</h3>
+        <p>Collection of experiments with AI/ML algorithms and optimization techniques.</p>
+        <a href="https://github.com/Ahmd00z/Machine-learning-projects" target="_blank">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="footer-grid">
+      <div class="footer-left">
+        <p><i class="fas fa-phone"></i> +20 1026381343</p>
+        <p><i class="fas fa-envelope"></i> ahmedmaged@gmail.com</p>
+      </div>
+      <div class="footer-right">
+        <div class="social-icons">
+          <a href="https://github.com/Ahmd00z" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/ahmed-maged" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto:ahmedmaged@gmail.com"><i class="fas fa-envelope"></i></a>
+          <a href="tel:+201026381343"><i class="fas fa-phone"></i></a>
         </div>
       </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects">
-      <div class="container">
-        <h2>Projects</h2>
-        <div class="projects-grid">
-          <div class="proj card">
-            <h3>NYC Taxi Trip Prediction</h3>
-            <p>ML regression models to predict trip duration using distance metrics and temporal features.</p>
-            <a href="https://github.com/Ahmd00z/nyc-taxi" target="_blank">View Project</a>
-          </div>
-          <div class="proj card">
-            <h3>Fraud Detection</h3>
-            <p>Fraudulent transaction detection using anomaly detection and supervised ML models.</p>
-            <a href="https://github.com/Ahmd00z/fraud-detection" target="_blank">View Project</a>
-          </div>
-          <div class="proj card">
-            <h3>SalePrice EDA</h3>
-            <p>Exploratory data analysis and predictive modeling on house prices dataset.</p>
-            <a href="https://github.com/Ahmd00z/Machine-learning-projects" target="_blank">View Project</a>
-          </div>
-          <div class="proj card">
-            <h3>ML Pipelines</h3>
-            <p>End-to-end machine learning workflow including preprocessing and deployment.</p>
-            <a href="https://github.com/Ahmd00z/Machine-learning-projects" target="_blank">View Project</a>
-          </div>
-          <div class="proj card">
-            <h3>AI Experiments</h3>
-            <p>Collection of experiments with AI/ML algorithms and optimization techniques.</p>
-            <a href="https://github.com/Ahmd00z/Machine-learning-projects" target="_blank">View Project</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills">
-      <div class="container">
-        <h2>Skills</h2>
-        <div class="grid cols-3">
-          <div class="skill card">
-            <h3>Tech Stack</h3>
-            <p>Git, GitHub, SQL, Azure, Python, C, C++, Java, PyTorch, Transformers, OpenCV</p>
-          </div>
-          <div class="skill card">
-            <h3>Machine Learning</h3>
-            <p>Regression, Classification, Random Forest, KNN, K-Means, Bagging &amp; Boosting</p>
-          </div>
-          <div class="skill card">
-            <h3>Deep Learning</h3>
-            <p>CNNs, RNNs, GNNs, GAT, VAE, Transformers</p>
-          </div>
-          <div class="skill card">
-            <h3>Knowledge</h3>
-            <p>Problem solving, OOP, DSA, Databases, Signal Processing, Image Processing</p>
-          </div>
-          <div class="skill card">
-            <h3>Soft Skills</h3>
-            <p>Adaptability, Communication, Critical Thinking, Collaboration</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Education -->
-    <section id="education">
-      <div class="container">
-        <h2>Education</h2>
-        <div class="edu card">
-          <h3>B.Sc. Computer Engineering</h3>
-          <p>Faculty of Engineering, Zagazig University (2022 - 2027)</p>
-          <p>Relevant Coursework: Machine Learning, Artificial Intelligence, Data Structures &amp; Algorithms, Database Systems, Operating Systems</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Certifications -->
-    <section id="certs">
-      <div class="container">
-        <h2>Certifications &amp; Training</h2>
-        <div class="grid cols-2">
-          <div class="cert card">Artificial Intelligence (AI) Summer Training at ITI (07.2025 - 08.2025)</div>
-          <div class="cert card">Microsoft Machine Learning at DEPI (06.2025 - 01.2025)</div>
-          <div class="cert card">Gen AI Summer Training at ITI (08.2025 - 09.2025)</div>
-          <div class="cert card">Machine Learning Diploma at CSkilled (06.2025 - 10.2025)</div>
-          <div class="cert card">Deep Learning &amp; System Design Diploma at CSkilled (10.2025 - Present)</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact">
-      <div class="container">
-        <h2>Contact</h2>
-        <div class="contact card">
-          <p>Email: <a href="mailto:ahmedmaged@gmail.com">ahmedmaged@gmail.com</a></p>
-          <p>Phone: <a href="tel:+201026381343">+20 1026381343</a></p>
-          <p>LinkedIn: <a href="https://www.linkedin.com/in/ahmed-maged" target="_blank" rel="noopener noreferrer">linkedin.com/in/ahmed-maged</a></p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>© <span id="year"></span> Ahmed Maged. All rights reserved.</p>
+    </div>
+    <div class="copyright">
+      <p>© 2025 Ahmed Maged. All rights reserved.</p>
+    </div>
   </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
+</html>
