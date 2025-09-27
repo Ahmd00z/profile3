@@ -7,9 +7,6 @@
   <meta name="description" content="Portfolio of Ahmed Maged, a Machine Learning Developer specializing in MLOps, model optimization, and data-driven products." />
   <meta name="theme-color" content="#0ea5e9" />
 
-  <!-- Favicon -->
-  <link rel="icon" href="profile.jpg" />
-
   <style>
     :root {
       --bg: #0b1020;
@@ -18,73 +15,169 @@
       --text: #e6eef5;
       --brand: #0ea5e9;
       --accent: #22d3ee;
-      --radius: 18px;
-      --shadow: 0 10px 30px rgba(0,0,0,.25);
-      --font: ui-sans-serif, system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Arial;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0,0,0,0.25);
+      --font: 'Segoe UI', Roboto, Ubuntu, sans-serif;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
     body {
-      font-family: var(--font);
-      color: var(--text);
       background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
       line-height: 1.6;
     }
-    img { max-width: 100%; border-radius: var(--radius); }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
 
-    /* Nav */
+    .container {
+      width: min(1100px, 90%);
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+
     header.nav {
-      position: sticky; top: 0;
+      position: sticky;
+      top: 0;
+      background: rgba(11,16,32,0.85);
       backdrop-filter: blur(8px);
-      background: rgba(11,16,32,.75);
-      border-bottom: 1px solid rgba(255,255,255,.06);
-      z-index: 50;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      z-index: 100;
     }
     .nav-inner {
-      display: flex; justify-content: space-between; align-items: center;
-      width: min(1100px, 92%); margin: auto; padding: 14px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
     }
-    .nav-links { display: flex; gap: 16px; }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
     .btn {
       padding: 10px 16px;
       border-radius: var(--radius);
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.05);
       color: var(--text);
       font-weight: 600;
-      text-decoration: none;
-      transition: 0.3s;
+      transition: background 0.3s, color 0.3s;
     }
-    .btn:hover { background: var(--brand); }
+    .btn:hover {
+      background: var(--brand);
+      color: #fff;
+    }
 
-    /* Hero */
+    /* Hero / Intro */
     .hero {
-      display: grid; grid-template-columns: 1.3fr .7fr;
-      gap: 28px; align-items: center;
-      width: min(1100px, 92%); margin: auto; padding: 60px 0;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 40px;
+      align-items: center;
+      padding: 80px 0;
     }
-    @media(max-width:900px) { .hero { grid-template-columns: 1fr; text-align: center; } }
-    .hero h1 { font-size: clamp(28px, 3.2vw, 44px); font-weight: 800; margin-bottom: 12px; }
-    .hero p { color: var(--muted); }
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+    .hero .intro {
+      max-width: 600px;
+    }
+    .hero .intro h1 {
+      font-size: clamp(32px, 5vw, 48px);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .hero .intro p {
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+    .hero .intro .links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .hero .photo {
+      text-align: center;
+    }
+    .hero .photo img {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--brand);
+    }
 
-    /* Sections */
-    section { padding: 60px 0; width: min(1100px, 92%); margin: auto; }
-    section h2 { font-size: 28px; margin-bottom: 20px; }
+    .section {
+      padding: 60px 0;
+    }
+    .section h2 {
+      font-size: 28px;
+      margin-bottom: 24px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+      padding-bottom: 6px;
+    }
+    .section .lead {
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
 
-    /* Cards */
-    .grid { display: grid; gap: 20px; }
-    .cols-3 { grid-template-columns: repeat(3, 1fr); }
-    @media(max-width:900px) { .cols-3 { grid-template-columns: 1fr; } }
+    .grid {
+      display: grid;
+      gap: 28px;
+    }
+    .cols-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .cols-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 900px) {
+      .cols-2, .cols-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .card {
       background: var(--card);
       border-radius: var(--radius);
-      padding: 20px;
+      padding: 24px;
       box-shadow: var(--shadow);
     }
-    .card h3 { margin-bottom: 10px; }
-    .card p.meta { color: var(--muted); font-size: 14px; margin-bottom: 8px; }
-    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .card h3 {
+      margin-bottom: 12px;
+      color: #fff;
+    }
+    .card p.meta {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+    .card p {
+      margin-bottom: 16px;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
     .chip {
-      background: rgba(255,255,255,.08);
+      background: rgba(255,255,255,0.08);
       padding: 6px 10px;
       border-radius: 999px;
       font-size: 12px;
@@ -92,96 +185,141 @@
     }
 
     /* Footer */
-    footer { text-align: center; padding: 20px; color: var(--muted); font-size: 14px; }
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
 
-<header class="nav">
-  <div class="nav-inner">
-    <div class="brand">Ahmed Maged</div>
-    <nav class="nav-links">
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-      <a class="btn" href="mailto:ahmedmaged2004zsc@gmail.com">Hire Me</a>
-    </nav>
-  </div>
-</header>
-
-<!-- Hero -->
-<section class="hero">
-  <div>
-    <p class="chip">Machine Learning Developer · MLOps · Applied AI</p>
-    <h1>I build reliable ML systems that ship to production.</h1>
-    <p>From scoping datasets to training, evaluation, and deploying models with monitoring. 
-       Focused on measurable impact, clean code, and fast iterations.</p>
-    <div style="margin-top:20px; display:flex; gap:12px; flex-wrap:wrap;">
-      <a class="btn" href="#projects">See Projects</a>
-      <a class="btn" href="https://github.com/Ahmd00z" target="_blank">GitHub</a>
-      <a class="btn" href="https://www.linkedin.com/in/ahmed-maged-swe" target="_blank">LinkedIn</a>
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="brand">Ahmed&nbsp;Maged</div>
+      <nav class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <a class="btn" href="mailto:ahmedmaged2004zsc@gmail.com">Hire Me</a>
+      </nav>
     </div>
-  </div>
-  <div>
-    <img src="profile.jpg" alt="Ahmed Maged Profile Picture" />
-  </div>
-</section>
+  </header>
 
-<!-- Projects -->
-<section id="projects">
-  <h2>Featured Projects</h2>
-  <div class="grid cols-3">
-    <div class="card">
-      <h3>📊 SalePrice_EDA</h3>
-      <p class="meta">Python, Pandas, Matplotlib</p>
-      <p>Exploratory Data Analysis on housing prices with detailed feature engineering & visualization.</p>
-      <div class="tags"><span class="chip">EDA</span><span class="chip">Feature Engineering</span></div>
-      <a class="btn" href="https://github.com/Ahmd00z/Machine-learning-projects/tree/main/SalePrice_EDA" target="_blank">View Project</a>
+  <div class="container">
+    <section class="hero">
+      <div class="intro">
+        <p class="chip">Machine Learning Developer · MLOps · Applied AI</p>
+        <h1>I build reliable ML systems that ship to production</h1>
+        <p>From scoping datasets to training, evaluation, deploying models with monitoring. Clean code, fast iterations, measurable impact.</p>
+        <div class="links">
+          <a class="btn" href="#projects">See Projects</a>
+          <a class="btn" href="https://github.com/Ahmd00z" target="_blank">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/ahmed-maged-swe" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+      <div class="photo">
+        <img src="profile.jpg" alt="Ahmed Maged Photo" />
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <p class="lead">Some of my works in ML & AI</p>
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>SalePrice_EDA</h3>
+          <p class="meta">Exploratory Data Analysis</p>
+          <p>Performed EDA, feature engineering, and insights on housing data.</p>
+          <div class="tags"><span class="chip">EDA</span><span class="chip">DataViz</span></div>
+          <a class="btn" href="https://github.com/Ahmd00z/Machine-learning-projects/tree/main/SalePrice_EDA" target="_blank">View Project</a>
+        </div>
+        <div class="card">
+          <h3>Classification_Model</h3>
+          <p class="meta">Machine Learning</p>
+          <p>Built classification model pipelines with feature engineering and evaluations.</p>
+          <div class="tags"><span class="chip">Classification</span><span class="chip">ML</span></div>
+          <a class="btn" href="https://github.com/Ahmd00z/Machine-learning-projects/tree/main/Classification_Model" target="_blank">View Project</a>
+        </div>
+        <div class="card">
+          <h3>Regression_Model</h3>
+          <p class="meta">Machine Learning</p>
+          <p>Constructed regression models to predict target variables with preprocessing.</p>
+          <div class="tags"><span class="chip">Regression</span><span class="chip">Modeling</span></div>
+          <a class="btn" href="https://github.com/Ahmd00z/Machine-learning-projects/tree/main/Regression_Model" target="_blank">View Project</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+      <h2>Education</h2>
+      <div class="card">
+        <h3>B.Sc. Computer Engineering</h3>
+        <p class="meta">Faculty of Engineering, [Your University] — (Year start – Year end)</p>
+        <p>Relevant coursework: Machine Learning, Data Structures & Algorithms, AI, Database Systems, Operating Systems</p>
+      </div>
+    </section>
+
+    <!-- Certifications & Training -->
+    <section id="certifications" class="section">
+      <h2>Certifications & Training</h2>
+      <div class="card">
+        <ul>
+          <li>Artificial Intelligence (AI) Summer Training — ITI (07.2025 – 08.2025)</li>
+          <li>Microsoft Machine Learning — DEPI (06.2025 – 01.2025)</li>
+          <li>Gen AI Summer Training — ITI (08.2025 – 09.2025)</li>
+          <li>Machine Learning Diploma — CSkilled (06.2025 – 10.2025)</li>
+          <li>Deep Learning & System Design Diploma — CSkilled (10.2025 – Present)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+      <h2>Skills & Tools</h2>
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>Modeling</h3>
+          <p>Supervised / Unsupervised, Time Series, NLP, Computer Vision</p>
+        </div>
+        <div class="card">
+          <h3>MLOps & Deployment</h3>
+          <p>MLflow, Docker, Kubernetes, CI/CD, Model Serving</p>
+        </div>
+        <div class="card">
+          <h3>Data & Backend</h3>
+          <p>Python, FastAPI, SQL, Pandas, Spark</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <h2>Contact Me</h2>
+      <div class="card">
+        <p>Email: <a href="mailto:ahmedmaged2004zsc@gmail.com">ahmedmaged2004zsc@gmail.com</a></p>
+        <p>Phone: 01026381343</p>
+        <p>GitHub: <a href="https://github.com/Ahmd00z" target="_blank">github.com/Ahmd00z</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/ahmed-maged-swe" target="_blank">linkedin.com/in/ahmed-maged-swe</a></p>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Ahmed Maged. All rights reserved.</p>
     </div>
-    <div class="card">
-      <h3>🤖 Classification_Model</h3>
-      <p class="meta">scikit-learn, Logistic Regression</p>
-      <p>Implemented ML classification models with evaluation metrics and comparison of algorithms.</p>
-      <div class="tags"><span class="chip">Classification</span><span class="chip">scikit-learn</span></div>
-      <a class="btn" href="https://github.com/Ahmd00z/Machine-learning-projects/tree/main/Classification_Model" target="_blank">View Project</a>
-    </div>
-    <div class="card">
-      <h3>📈 Regression_Model</h3>
-      <p class="meta">Python, Linear Regression</p>
-      <p>Built regression models to predict target variables with preprocessing and model evaluation.</p>
-      <div class="tags"><span class="chip">Regression</span><span class="chip">Model Evaluation</span></div>
-      <a class="btn" href="https://github.com/Ahmd00z/Machine-learning-projects/tree/main/Regression_Model" target="_blank">View Project</a>
-    </div>
-  </div>
-</section>
+  </footer>
 
-<!-- Skills -->
-<section id="skills">
-  <h2>Skills & Tooling</h2>
-  <div class="grid cols-3">
-    <div class="card"><h3>Modeling</h3><p>PyTorch, TensorFlow, scikit-learn, LightGBM</p></div>
-    <div class="card"><h3>MLOps</h3><p>MLflow, Docker, Kubernetes, Airflow</p></div>
-    <div class="card"><h3>Data</h3><p>Python, FastAPI, SQL, Spark</p></div>
-  </div>
-</section>
-
-<!-- Contact -->
-<section id="contact">
-  <h2>Contact</h2>
-  <div class="card">
-    <p>Email: <a href="mailto:ahmedmaged2004zsc@gmail.com">ahmedmaged2004zsc@gmail.com</a></p>
-    <p>GitHub: <a href="https://github.com/Ahmd00z" target="_blank">github.com/Ahmd00z</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/ahmed-maged-swe" target="_blank">linkedin.com/in/ahmed-maged-swe</a></p>
-  </div>
-</section>
-
-<footer>
-  <p>© <span id="year"></span> Ahmed Maged. All rights reserved.</p>
-</footer>
-
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
+
 
