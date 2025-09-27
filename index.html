@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ahmed Maged | Portfolio</title>
+  <!-- Favicon -->
+  <link rel="icon" href="profile.jpg" type="image/jpg">
+  <!-- Font Awesome Icons -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
     body {
@@ -35,26 +38,41 @@
       color: #ccc;
     }
     section {
-      padding: 60px 10%;
+      padding: 70px 12%;
     }
     h2 {
       font-size: 2rem;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
       color: gold;
       border-bottom: 2px solid gold;
       display: inline-block;
-      padding-bottom: 5px;
+      padding-bottom: 6px;
     }
-    .education, .certifications, .projects {
-      margin-bottom: 50px;
+    .education, .skills, .certifications, .projects {
+      margin-bottom: 70px;
     }
-    .education p, .certifications p {
+    .education p, .certifications p, .skills ul {
       margin: 10px 0;
+    }
+    .skills ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .skills li {
+      margin: 8px 0;
+      padding-left: 20px;
+      position: relative;
+    }
+    .skills li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: gold;
     }
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
     }
     .project-card {
       background: #1a1a1a;
@@ -73,13 +91,13 @@
     }
     footer {
       background: #111;
-      padding: 30px;
+      padding: 40px;
       text-align: center;
     }
     .social-icons a {
       color: gold;
       margin: 0 15px;
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       transition: color 0.3s ease;
     }
     .social-icons a:hover {
@@ -99,21 +117,34 @@
   </header>
 
   <section class="education">
-    <h2>Education</h2>
+    <h2><i class="fas fa-graduation-cap"></i> Education</h2>
     <p><strong>B.Sc. Computer Engineering</strong></p>
     <p>Faculty of Engineering, Zagazig University (2022 - 2027)</p>
     <p><em>Relevant Coursework:</em> Machine Learning, Artificial Intelligence, Data Structures & Algorithms, Database Systems, Operating Systems</p>
   </section>
 
+  <section class="skills">
+    <h2><i class="fas fa-lightbulb"></i> Skills</h2>
+    <ul>
+      <li>Problem Solving & Critical Thinking</li>
+      <li>Teamwork & Collaboration</li>
+      <li>Effective Communication</li>
+      <li>Adaptability & Time Management</li>
+      <li>Leadership & Initiative</li>
+    </ul>
+  </section>
+
   <section class="certifications">
-    <h2>Certifications & Training</h2>
-    <p>— Machine Learning Specialization (Coursera)</p>
-    <p>— Deep Learning with PyTorch (Udemy)</p>
-    <p>— SQL for Data Science (Coursera)</p>
+    <h2><i class="fas fa-certificate"></i> Certifications & Training</h2>
+    <p>— Artificial Intelligence (AI) Summer Training at ITI (07.2025 - 08.2025)</p>
+    <p>— Microsoft Machine Learning at DEPI (06.2025 - 01.2025)</p>
+    <p>— Gen AI Summer Training at ITI (08.2025 - 09.2025)</p>
+    <p>— Machine Learning Diploma at CSkilled (06.2025 - 10.2025)</p>
+    <p>— Deep Learning & System Design Diploma at CSkilled (10.2025 - Present)</p>
   </section>
 
   <section class="projects">
-    <h2>Projects</h2>
+    <h2><i class="fas fa-code"></i> Projects</h2>
     <div class="projects-grid">
       <div class="project-card">
         <h3>NYC Taxi Analysis</h3>
@@ -156,5 +187,3 @@
   </footer>
 </body>
 </html>
-
-
